@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { findBestMatch, getTopTraits, type TraitScores, type MatchResult } from '@/lib/matching'
 
-export default function Result() {
+function ResultContent() {
   const searchParams = useSearchParams()
   const [matchResult, setMatchResult] = useState<MatchResult | null>(null)
   const [explanation, setExplanation] = useState<string>('')
@@ -225,6 +225,21 @@ export default function Result() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function Result() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">페이지를 로딩하고 있습니다...</p>
+        </div>
+      </div>
+    }>
+      <ResultContent />
+    </Suspense>
   )
 }
 
