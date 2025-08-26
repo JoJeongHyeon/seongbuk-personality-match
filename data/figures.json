@@ -1,0 +1,233 @@
+[
+  {
+    "id": "gye-yong-muk",
+    "name": "계용묵",
+    "birth_year": 1904,
+    "death_year": 1961,
+    "occupation": "소설가",
+    "major_works": ["백치 아다다", "별을 헨다", "개밥바라기"],
+    "personality_traits": {
+      "introspective": 8,
+      "romantic": 7,
+      "melancholic": 9,
+      "intellectual": 8,
+      "traditional": 6,
+      "rebellious": 4,
+      "artistic": 9,
+      "social": 5
+    },
+    "themes": ["농촌 현실", "인간의 고독", "전통과 근대의 갈등"],
+    "description": "일제강점기와 해방 후의 농촌 현실을 섬세하게 그린 소설가. 인간의 내면 심리와 고독을 깊이 있게 탐구했다.",
+    "seongbuk_connection": "성북구 돈암동에서 거주하며 많은 작품을 집필"
+  },
+  {
+    "id": "kim-gwang-gyun",
+    "name": "김광균",
+    "birth_year": 1914,
+    "death_year": 1993,
+    "occupation": "시인",
+    "major_works": ["와사등", "설야", "추일서정"],
+    "personality_traits": {
+      "introspective": 9,
+      "romantic": 8,
+      "melancholic": 8,
+      "intellectual": 9,
+      "traditional": 5,
+      "rebellious": 6,
+      "artistic": 9,
+      "social": 4
+    },
+    "themes": ["도시의 고독", "모더니즘", "서정적 감각"],
+    "description": "모더니즘 시의 대표 시인으로, 도시적 감각과 세련된 언어로 현대인의 고독을 노래했다.",
+    "seongbuk_connection": "성북구에서 오랜 기간 거주하며 문학 활동을 전개"
+  },
+  {
+    "id": "kim-dong-ri",
+    "name": "김동리",
+    "birth_year": 1913,
+    "death_year": 1995,
+    "occupation": "소설가",
+    "major_works": ["무녀도", "바위", "역마"],
+    "personality_traits": {
+      "introspective": 7,
+      "romantic": 6,
+      "melancholic": 6,
+      "intellectual": 9,
+      "traditional": 9,
+      "rebellious": 5,
+      "artistic": 8,
+      "social": 6
+    },
+    "themes": ["운명론", "전통 문화", "인간의 원시성"],
+    "description": "한국 전통 문화와 샤머니즘을 바탕으로 인간의 원초적 본성을 탐구한 소설가.",
+    "seongbuk_connection": "성북구 성북동에서 거주하며 '김동리 문학관' 건립"
+  },
+  {
+    "id": "kim-whan-ki",
+    "name": "김환기",
+    "birth_year": 1913,
+    "death_year": 1974,
+    "occupation": "화가",
+    "major_works": ["어디서 무엇이 되어 다시 만나랴", "달", "새"],
+    "personality_traits": {
+      "introspective": 7,
+      "romantic": 9,
+      "melancholic": 7,
+      "intellectual": 8,
+      "traditional": 7,
+      "rebellious": 7,
+      "artistic": 10,
+      "social": 6
+    },
+    "themes": ["고향에 대한 그리움", "추상미술", "한국적 정서"],
+    "description": "한국 추상미술의 선구자로, 전통적인 한국의 정서를 현대적 조형언어로 표현한 화가.",
+    "seongbuk_connection": "성북구 성북동에서 거주하며 많은 작품 활동"
+  },
+  {
+    "id": "park-kyung-ri",
+    "name": "박경리",
+    "birth_year": 1926,
+    "death_year": 2008,
+    "occupation": "소설가",
+    "major_works": ["토지", "김약국의 딸들", "시장과 전장"],
+    "personality_traits": {
+      "introspective": 8,
+      "romantic": 6,
+      "melancholic": 7,
+      "intellectual": 9,
+      "traditional": 8,
+      "rebellious": 8,
+      "artistic": 9,
+      "social": 9
+    },
+    "themes": ["역사 의식", "여성의 삶", "토착적 생명력"],
+    "description": "대하소설 '토지'로 한국 근현대사를 웅장하게 그려낸 여성 작가의 대표주자.",
+    "seongbuk_connection": "성북구에서 거주하며 '토지' 집필 작업을 진행"
+  },
+  {
+    "id": "park-mok-wol",
+    "name": "박목월",
+    "birth_year": 1916,
+    "death_year": 1978,
+    "occupation": "시인",
+    "major_works": ["청록집", "산도화", "무순"],
+    "personality_traits": {
+      "introspective": 8,
+      "romantic": 9,
+      "melancholic": 6,
+      "intellectual": 7,
+      "traditional": 9,
+      "rebellious": 3,
+      "artistic": 9,
+      "social": 5
+    },
+    "themes": ["자연 서정", "향토적 정서", "순수 서정"],
+    "description": "자연과 고향에 대한 순수한 서정을 노래한 청록파 시인의 대표주자.",
+    "seongbuk_connection": "성북구에서 거주하며 자연 친화적인 시 세계를 구축"
+  },
+  {
+    "id": "park-wan-suh",
+    "name": "박완서",
+    "birth_year": 1931,
+    "death_year": 2011,
+    "occupation": "소설가",
+    "major_works": ["나목", "엄마의 말뚝", "그 많던 싱아는 누가 다 먹었을까"],
+    "personality_traits": {
+      "introspective": 8,
+      "romantic": 5,
+      "melancholic": 7,
+      "intellectual": 8,
+      "traditional": 6,
+      "rebellious": 7,
+      "artistic": 8,
+      "social": 9
+    },
+    "themes": ["여성의 현실", "중산층의 삶", "전쟁의 상처"],
+    "description": "중산층 여성의 일상과 한국전쟁의 상처를 예리하게 관찰한 여성 작가.",
+    "seongbuk_connection": "성북구 길음동에서 오랜 기간 거주하며 작품 활동"
+  },
+  {
+    "id": "oh-tak-beon",
+    "name": "오탁번",
+    "birth_year": 1916,
+    "death_year": 1979,
+    "occupation": "시인, 번역가",
+    "major_works": ["유리창", "포도와 같은 슬픔", "번역 작품들"],
+    "personality_traits": {
+      "introspective": 9,
+      "romantic": 8,
+      "melancholic": 9,
+      "intellectual": 9,
+      "traditional": 5,
+      "rebellious": 6,
+      "artistic": 8,
+      "social": 4
+    },
+    "themes": ["실존적 고뇌", "서구 문학 소개", "지적 탐구"],
+    "description": "실존주의적 사유와 서구 문학 번역에 기여한 지성적 시인.",
+    "seongbuk_connection": "성북구에서 거주하며 번역과 창작 활동을 병행"
+  },
+  {
+    "id": "im-hwa",
+    "name": "임화",
+    "birth_year": 1908,
+    "death_year": 1953,
+    "occupation": "시인, 문학평론가",
+    "major_works": ["현해탄", "우리 옵바와 화로", "문학의 논리"],
+    "personality_traits": {
+      "introspective": 7,
+      "romantic": 6,
+      "melancholic": 6,
+      "intellectual": 10,
+      "traditional": 4,
+      "rebellious": 9,
+      "artistic": 8,
+      "social": 9
+    },
+    "themes": ["사회 현실", "프롤레타리아 문학", "문학 이론"],
+    "description": "카프(KAPF) 문학의 이론가이자 실천가로, 사회 현실에 대한 날카로운 비판 의식을 보여준 시인이자 평론가.",
+    "seongbuk_connection": "성북구에서 활동하며 진보적 문학 운동을 전개"
+  },
+  {
+    "id": "jo-ji-hun",
+    "name": "조지훈",
+    "birth_year": 1920,
+    "death_year": 1968,
+    "occupation": "시인, 국문학자",
+    "major_works": ["청록집", "풀잎단장", "봉황수"],
+    "personality_traits": {
+      "introspective": 9,
+      "romantic": 8,
+      "melancholic": 7,
+      "intellectual": 9,
+      "traditional": 10,
+      "rebellious": 4,
+      "artistic": 9,
+      "social": 6
+    },
+    "themes": ["전통 미학", "선비 정신", "고전적 서정"],
+    "description": "전통 문화와 선비 정신을 바탕으로 한 고전적이고 품격 있는 서정시를 추구한 청록파 시인.",
+    "seongbuk_connection": "성북구에서 거주하며 전통 문학 연구와 창작 활동"
+  },
+  {
+    "id": "choi-in-hun",
+    "name": "최인훈",
+    "birth_year": 1936,
+    "death_year": 2013,
+    "occupation": "소설가",
+    "major_works": ["광장", "회색인", "태평천하"],
+    "personality_traits": {
+      "introspective": 9,
+      "romantic": 5,
+      "melancholic": 7,
+      "intellectual": 10,
+      "traditional": 5,
+      "rebellious": 8,
+      "artistic": 9,
+      "social": 7
+    },
+    "themes": ["분단 현실", "지식인의 고뇌", "현대 문명 비판"],
+    "description": "분단 현실과 현대 문명에 대한 예리한 통찰력으로 한국 문학사에 큰 족적을 남긴 소설가.",
+    "seongbuk_connection": "성북구에서 거주하며 대표작들을 집필"
+  }
+]

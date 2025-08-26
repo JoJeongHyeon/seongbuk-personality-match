@@ -1,0 +1,178 @@
+[
+  {
+    "id": "lifestyle",
+    "question": "평소 당신의 생활 패턴은?",
+    "options": [
+      {
+        "text": "혼자만의 시간을 즐기며 책을 읽거나 사색하는 것을 좋아한다",
+        "traits": { "introspective": 3, "intellectual": 2, "social": -2 }
+      },
+      {
+        "text": "친구들과 모여 대화하고 활동하는 것을 선호한다",
+        "traits": { "social": 3, "introspective": -1, "romantic": 1 }
+      },
+      {
+        "text": "자연 속에서 조용히 산책하며 여유를 즐긴다",
+        "traits": { "romantic": 2, "traditional": 2, "melancholic": 1 }
+      },
+      {
+        "text": "새로운 것에 도전하고 변화를 추구한다",
+        "traits": { "rebellious": 3, "artistic": 1, "traditional": -2 }
+      }
+    ]
+  },
+  {
+    "id": "values",
+    "question": "인생에서 가장 중요하게 생각하는 가치는?",
+    "options": [
+      {
+        "text": "전통과 예의, 품격 있는 삶",
+        "traits": { "traditional": 3, "intellectual": 2, "rebellious": -2 }
+      },
+      {
+        "text": "자유로운 표현과 창의성",
+        "traits": { "artistic": 3, "rebellious": 2, "traditional": -1 }
+      },
+      {
+        "text": "사회 정의와 공동체 의식",
+        "traits": { "social": 3, "rebellious": 2, "intellectual": 1 }
+      },
+      {
+        "text": "개인의 내면적 성장과 깨달음",
+        "traits": { "introspective": 3, "intellectual": 2, "melancholic": 1 }
+      }
+    ]
+  },
+  {
+    "id": "emotional_tendency",
+    "question": "감정적으로 어떤 성향이 강한가요?",
+    "options": [
+      {
+        "text": "깊이 있게 생각하고 때로는 우울하기도 하다",
+        "traits": { "melancholic": 3, "introspective": 2, "romantic": 1 }
+      },
+      {
+        "text": "낭만적이고 감성적인 면이 강하다",
+        "traits": { "romantic": 3, "artistic": 2, "melancholic": 1 }
+      },
+      {
+        "text": "논리적이고 분석적으로 접근한다",
+        "traits": { "intellectual": 3, "introspective": 1, "romantic": -1 }
+      },
+      {
+        "text": "활동적이고 긍정적인 에너지가 넘친다",
+        "traits": { "social": 2, "rebellious": 1, "melancholic": -2 }
+      }
+    ]
+  },
+  {
+    "id": "creative_expression",
+    "question": "창작이나 표현 활동에 대한 당신의 태도는?",
+    "options": [
+      {
+        "text": "전통적인 형식과 규범을 중시한다",
+        "traits": { "traditional": 3, "artistic": 1, "rebellious": -2 }
+      },
+      {
+        "text": "기존 틀을 깨고 새로운 시도를 한다",
+        "traits": { "rebellious": 3, "artistic": 2, "traditional": -2 }
+      },
+      {
+        "text": "내면의 감정을 섬세하게 표현한다",
+        "traits": { "artistic": 3, "romantic": 2, "introspective": 2 }
+      },
+      {
+        "text": "사회적 메시지를 담아 표현한다",
+        "traits": { "social": 3, "rebellious": 2, "intellectual": 1 }
+      }
+    ]
+  },
+  {
+    "id": "social_interaction",
+    "question": "사람들과의 관계에서 당신은?",
+    "options": [
+      {
+        "text": "소수의 깊은 관계를 선호한다",
+        "traits": { "introspective": 2, "romantic": 1, "social": -1 }
+      },
+      {
+        "text": "많은 사람들과 폭넓게 교류한다",
+        "traits": { "social": 3, "introspective": -2, "rebellious": 1 }
+      },
+      {
+        "text": "혼자 있는 시간을 더 소중히 여긴다",
+        "traits": { "introspective": 3, "melancholic": 1, "social": -2 }
+      },
+      {
+        "text": "사회적 이슈에 관심이 많고 적극적으로 참여한다",
+        "traits": { "social": 3, "rebellious": 2, "intellectual": 1 }
+      }
+    ]
+  },
+  {
+    "id": "worldview",
+    "question": "세상을 바라보는 당신의 관점은?",
+    "options": [
+      {
+        "text": "현실을 있는 그대로 받아들이고 적응한다",
+        "traits": { "traditional": 2, "social": 1, "rebellious": -2 }
+      },
+      {
+        "text": "이상향을 추구하며 꿈과 희망을 중시한다",
+        "traits": { "romantic": 3, "artistic": 2, "melancholic": -1 }
+      },
+      {
+        "text": "비판적 사고로 문제점을 개선하려 한다",
+        "traits": { "rebellious": 3, "intellectual": 2, "social": 1 }
+      },
+      {
+        "text": "철학적으로 깊이 사유하며 본질을 탐구한다",
+        "traits": { "intellectual": 3, "introspective": 3, "melancholic": 1 }
+      }
+    ]
+  },
+  {
+    "id": "artistic_preference",
+    "question": "예술이나 문학 작품에서 선호하는 스타일은?",
+    "options": [
+      {
+        "text": "고전적이고 품격 있는 작품",
+        "traits": { "traditional": 3, "intellectual": 2, "artistic": 1 }
+      },
+      {
+        "text": "실험적이고 혁신적인 작품",
+        "traits": { "rebellious": 3, "artistic": 3, "traditional": -2 }
+      },
+      {
+        "text": "서정적이고 감성적인 작품",
+        "traits": { "romantic": 3, "artistic": 2, "melancholic": 1 }
+      },
+      {
+        "text": "사회 현실을 반영한 작품",
+        "traits": { "social": 3, "rebellious": 2, "intellectual": 1 }
+      }
+    ]
+  },
+  {
+    "id": "problem_solving",
+    "question": "문제에 직면했을 때 당신의 해결 방식은?",
+    "options": [
+      {
+        "text": "충분히 생각하고 신중하게 결정한다",
+        "traits": { "introspective": 3, "intellectual": 2, "melancholic": 1 }
+      },
+      {
+        "text": "직감을 믿고 감정에 따라 행동한다",
+        "traits": { "romantic": 3, "artistic": 1, "intellectual": -1 }
+      },
+      {
+        "text": "기존 방식보다 새로운 해결책을 찾는다",
+        "traits": { "rebellious": 3, "intellectual": 1, "traditional": -2 }
+      },
+      {
+        "text": "다른 사람들과 상의하여 함께 해결한다",
+        "traits": { "social": 3, "introspective": -1, "traditional": 1 }
+      }
+    ]
+  }
+]
