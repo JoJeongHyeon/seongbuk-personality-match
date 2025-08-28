@@ -26,45 +26,6 @@ export default function Home() {
             당신과 가장 닮은 인물을 찾아드립니다.
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 text-sm text-gray-500">
-            <div className="text-center">
-              <div className="font-semibold">한용운</div>
-              <div>시인, 승려</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">성봉진</div>
-              <div>노동운동가</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">김동삼</div>
-              <div>무장투쟁가</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">이육사</div>
-              <div>저항시인</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">안재홍</div>
-              <div>사회운동가</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">강영준</div>
-              <div>선전활동가</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">윤하진</div>
-              <div>의열투사</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">조소앙</div>
-              <div>정치사상가</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold">김재황</div>
-              <div>학생운동가</div>
-            </div>
-          </div>
-          
           <Link href="/survey" className="btn-primary inline-block">
             설문 시작하기
           </Link>

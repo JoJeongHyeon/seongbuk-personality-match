@@ -109,23 +109,58 @@ export default function EggAnimation({ stage, isHatching = false, className = ""
             </>
           )}
           
-          {/* 금이 간 효과 (stage 7 또는 부화 중) */}
+          {/* 지그재그 금이 간 효과 (stage 7 또는 부화 중) */}
           {(currentStage >= 7 || isHatching) && (
             <div className="absolute inset-0">
-              {/* 세로 금 */}
-              <div 
-                className="absolute top-1/4 left-1/2 w-0.5 h-1/2 bg-gray-400 opacity-60 transform -translate-x-1/2"
-                style={{
-                  background: 'linear-gradient(180deg, transparent 0%, #6B7280 20%, #6B7280 80%, transparent 100%)'
-                }}
-              />
-              {/* 지그재그 금 */}
-              <div 
-                className="absolute top-1/3 left-1/3 w-6 h-0.5 bg-gray-400 opacity-50 transform rotate-45"
-              />
-              <div 
-                className="absolute bottom-1/3 right-1/3 w-4 h-0.5 bg-gray-400 opacity-40 transform -rotate-45"
-              />
+              {/* 메인 지그재그 금 - SVG로 자연스러운 모양 */}
+              <svg 
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 100 120"
+                style={{ opacity: 0.7 }}
+              >
+                {/* 주요 지그재그 금 */}
+                <path
+                  d="M 35 20 L 40 35 L 35 50 L 45 65 L 40 80 L 50 95"
+                  stroke="#6B7280"
+                  strokeWidth="1.5"
+                  fill="none"
+                  strokeLinecap="round"
+                  className={isHatching ? "animate-pulse" : ""}
+                />
+                
+                {/* 보조 지그재그 금 */}
+                <path
+                  d="M 60 25 L 65 40 L 60 55"
+                  stroke="#6B7280"
+                  strokeWidth="1"
+                  fill="none"
+                  strokeLinecap="round"
+                  style={{ opacity: 0.6 }}
+                />
+                
+                {/* 작은 지그재그 금 */}
+                <path
+                  d="M 25 70 L 30 80 L 25 90"
+                  stroke="#6B7280"
+                  strokeWidth="0.8"
+                  fill="none"
+                  strokeLinecap="round"
+                  style={{ opacity: 0.5 }}
+                />
+                
+                {/* 가로 지그재그 금 (부화 시에만) */}
+                {isHatching && (
+                  <path
+                    d="M 20 60 L 35 65 L 50 60 L 65 65 L 80 60"
+                    stroke="#6B7280"
+                    strokeWidth="1"
+                    fill="none"
+                    strokeLinecap="round"
+                    className="animate-pulse"
+                    style={{ opacity: 0.8 }}
+                  />
+                )}
+              </svg>
             </div>
           )}
           
