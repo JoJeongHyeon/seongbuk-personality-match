@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import surveyQuestions from '@/data/survey-questions.json'
+import EggAnimation, { getStageDescription } from '@/components/EggAnimation'
 
 interface SurveyAnswer {
   questionId: string
@@ -83,6 +84,18 @@ export default function Survey() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="max-w-2xl mx-auto w-full">
+        {/* 알 애니메이션 */}
+        <div className="text-center mb-8">
+          <EggAnimation 
+            stage={currentQuestion} 
+            isHatching={currentQuestion === surveyQuestions.length - 1 && selectedOption !== null}
+            className="mb-4"
+          />
+          <p className="text-sm text-gray-600 italic">
+            {getStageDescription(currentQuestion)}
+          </p>
+        </div>
+
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between text-sm text-gray-600 mb-2">

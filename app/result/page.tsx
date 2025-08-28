@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { findBestMatch, getTopTraits, type TraitScores, type MatchResult } from '@/lib/matching'
+import HatchingAnimation from '@/components/HatchingAnimation'
 
 function ResultContent() {
   const searchParams = useSearchParams()
@@ -11,6 +12,8 @@ function ResultContent() {
   const [explanation, setExplanation] = useState<string>('')
   const [isLoading, setIsLoading] = useState(true)
   const [userTopTraits, setUserTopTraits] = useState<Array<{ name: string, score: number }>>([])
+  const [showHatching, setShowHatching] = useState(true)
+  const [showResults, setShowResults] = useState(false)
 
   useEffect(() => {
     const scoresParam = searchParams.get('scores')
@@ -59,6 +62,18 @@ function ResultContent() {
     }
   }
 
+  const handleHatchingComplete = () => {
+    setShowHatching(false)
+    setTimeout(() => {
+      setShowResults(true)
+    }, 500)
+  }
+
+  // 부화 애니메이션 표시
+  if (showHatching && matchResult) {
+    return <HatchingAnimation onHatchingComplete={handleHatchingComplete} figureName={matchResult.figure.name} />
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -84,12 +99,12 @@ function ResultContent() {
   }
 
   return (
-    <div className="min-h-screen py-8 px-4">
+    <div className={`min-h-screen py-8 px-4 transition-opacity duration-500 ${showResults ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">분석 결과</h1>
-          <p className="text-gray-600">당신과 가장 닮은 성북구의 문학인을 찾았습니다!</p>
+          <p className="text-gray-600">당신과 가장 닮은 성북구의 독립운동가를 찾았습니다!</p>
         </div>
 
         {/* Main Result Card */}
@@ -124,7 +139,7 @@ function ResultContent() {
           {/* Figure Description */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">
-              📚 인물 소개
+              🏴 인물 소개
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
               {matchResult.figure.description}
@@ -137,7 +152,7 @@ function ResultContent() {
           {/* Major Works */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">
-              ✨ 주요 작품
+              ⚔️ 주요 활동
             </h3>
             <div className="flex flex-wrap gap-2">
               {matchResult.figure.major_works.map((work, index) => (
@@ -154,7 +169,7 @@ function ResultContent() {
           {/* Themes */}
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-3">
-              🎨 주요 테마
+              🎯 독립운동 분야
             </h3>
             <div className="flex flex-wrap gap-2">
               {matchResult.figure.themes.map((theme, index) => (
