@@ -133,7 +133,7 @@
   },
   {
     "id": "artistic_preference",
-    "question": "예술이나 문학 작품에서 선호하는 스타일은?",
+    "question": "예술이나 저항문학 작품에서 선호하는 스타일은?",
     "options": [
       {
         "text": "고전적이고 품격 있는 작품",

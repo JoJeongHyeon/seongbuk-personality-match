@@ -1,31 +1,17 @@
-# 🚀 성북구 인물 추천 시스템 배포 가이드
+# 🚀 성북구 독립운동가 추천 시스템 배포 가이드
 
-이 문서는 성북구 인물 추천 시스템을 실제 서버에 배포하고 웹호스팅하는 방법을 설명합니다.
+이 문서는 다마고치 컨셉이 적용된 성북구 독립운동가 추천 시스템을 Vercel에 배포하는 방법을 설명합니다.
 
 ## 📋 목차
 
-1. [배포 플랫폼 선택](#배포-플랫폼-선택)
-2. [Vercel 배포 (권장)](#vercel-배포-권장)
-3. [Netlify 배포](#netlify-배포)
-4. [환경 변수 설정](#환경-변수-설정)
-5. [도메인 연결](#도메인-연결)
-6. [문제 해결](#문제-해결)
+1. [Vercel 배포](#vercel-배포)
+2. [환경 변수 설정](#환경-변수-설정)
+3. [도메인 연결](#도메인-연결)
+4. [문제 해결](#문제-해결)
 
 ---
 
-## 🎯 배포 플랫폼 선택
-
-### 추천 순위
-
-| 플랫폼 | 난이도 | 비용 | Next.js 지원 | 추천도 |
-|--------|--------|------|-------------|---------|
-| **Vercel** | ⭐ | 무료 | 완벽 | 🥇 |
-| **Netlify** | ⭐⭐ | 무료 | 좋음 | 🥈 |
-| **Railway** | ⭐⭐ | 유료 | 완벽 | 🥉 |
-
----
-
-## 🚀 Vercel 배포 (권장)
+## 🚀 Vercel 배포
 
 ### 장점
 - Next.js 개발사에서 만든 플랫폼
@@ -100,13 +86,62 @@ git rm --cached package-lock.json
 
 # 파일 추가 및 커밋
 git add .
-git commit -m "Initial commit: 성북 인물 추천 시스템"
+git commit -m "Initial commit: 성북 독립 운동가 추천 시스템"
 
 # GitHub 저장소 연결 (위에서 복사한 URL 사용)
 git branch -M main
 git remote add origin https://github.com/JoJeongHyeon/seongbuk-personality-match.git
 git push -u origin main
 ```
+
+### ✅ 첫 번째 커밋 완료!
+
+---
+
+## 🔄 코드 수정 후 업데이트 방법
+
+### 일반적인 업데이트 과정 (첫 커밋 이후)
+```powershell
+# 1. 수정된 파일 확인
+git status
+
+# 2. 수정된 파일들 스테이징
+git add .
+# 또는 특정 파일만: git add app/page.tsx
+
+# 3. 커밋 메시지와 함께 커밋
+git commit -m "feat: 다마고치 알 애니메이션 추가"
+
+# 4. GitHub에 푸시 (첫 커밋 이후부터는 -u 옵션 불필요)
+git push
+```
+
+### 🎯 커밋 메시지 컨벤션 (권장)
+```powershell
+# 새 기능 추가
+git commit -m "feat: 부화 애니메이션 구현"
+
+# 버그 수정
+git commit -m "fix: 알 크기 조정 오류 해결"
+
+# 디자인/스타일 변경
+git commit -m "style: 알 색상 그라데이션 개선"
+
+# 문서 업데이트
+git commit -m "docs: README에 다마고치 컨셉 설명 추가"
+
+# 리팩토링
+git commit -m "refactor: EggAnimation 컴포넌트 최적화"
+```
+
+### ⚠️ 첫 번째 vs 이후 커밋의 차이점
+
+| 구분 | 첫 번째 커밋 | 이후 커밋 |
+|------|-------------|----------|
+| **브랜치 설정** | `git branch -M main` | 불필요 |
+| **원격 저장소 연결** | `git remote add origin URL` | 불필요 |
+| **푸시 명령어** | `git push -u origin main` | `git push` |
+| **-u 옵션** | 필요 (upstream 설정) | 불필요 |
 
 ### 4단계: Vercel에 배포
 1. Vercel 대시보드에서 **"New Project"** 클릭
@@ -119,54 +154,19 @@ git push -u origin main
 ### 5단계: 배포 완료
 - 2-3분 후 배포 완료
 - `https://your-project-name.vercel.app` 형태의 URL 생성
+- 실제 URL : `https://seongbuk-personality-match-ie2u1i1zy-jo-jeonghyeons-projects.vercel.app/`
 - 자동으로 HTTPS 적용
-
----
-
-## 🌐 Netlify 배포
-
-### 1단계: Netlify 계정 생성
-1. [netlify.com](https://netlify.com) 방문
-2. GitHub 계정으로 로그인
-
-### 2단계: 빌드 설정
-```powershell
-# netlify.toml 파일 생성
-echo '[build]' > netlify.toml
-echo '  command = "npm run build"' >> netlify.toml
-echo '  publish = ".next"' >> netlify.toml
-echo '' >> netlify.toml
-echo '[[redirects]]' >> netlify.toml
-echo '  from = "/*"' >> netlify.toml
-echo '  to = "/index.html"' >> netlify.toml
-echo '  status = 200' >> netlify.toml
-```
-
-### 3단계: 배포
-1. Netlify 대시보드에서 **"New site from Git"**
-2. GitHub 저장소 연결
-3. 빌드 설정 확인
-4. 환경 변수 추가: `OPENAI_API_KEY`
-5. Deploy
-
-
 
 ---
 
 ## 🔐 환경 변수 설정
 
-### 각 플랫폼별 환경 변수 설정
-
-#### Vercel
-1. 프로젝트 대시보드 → Settings → Environment Variables
-2. `OPENAI_API_KEY` 추가
-3. Production, Preview, Development 모두 체크
-
-#### Netlify
-1. Site settings → Environment variables
-2. `OPENAI_API_KEY` 추가
-
-
+### Vercel 환경 변수 설정
+1. Vercel 프로젝트 대시보드 → **Settings** → **Environment Variables**
+2. **Name**: `OPENAI_API_KEY`
+3. **Value**: 실제 OpenAI API 키 입력
+4. **Environments**: Production, Preview, Development 모두 체크
+5. **Add** 클릭
 
 ---
 
@@ -176,27 +176,17 @@ echo '  status = 200' >> netlify.toml
 - **Namecheap**, **GoDaddy**, **가비아** 등에서 도메인 구매
 - 예: `seongbuk-match.com`
 
-### 2. DNS 설정
-
-#### Vercel의 경우
-1. Vercel 프로젝트 → Settings → Domains
+### 2. Vercel DNS 설정
+1. Vercel 프로젝트 → **Settings** → **Domains**
 2. 커스텀 도메인 추가
-3. DNS 제공업체에서 CNAME 레코드 설정:
+3. DNS 제공업체에서 레코드 설정:
    ```
-   www.seongbuk-match.com → cname.vercel-dns.com
+   www.seongbuk-match.com → cname.vercel-dns.com (CNAME)
    seongbuk-match.com → 76.76.19.61 (A 레코드)
    ```
 
-#### Netlify의 경우
-1. Site settings → Domain management
-2. 커스텀 도메인 추가
-3. DNS 설정:
-   ```
-   www.seongbuk-match.com → your-site-name.netlify.app
-   ```
-
 ### 3. HTTPS 인증서
-- Vercel, Netlify: 자동으로 Let's Encrypt 인증서 적용
+- Vercel에서 자동으로 Let's Encrypt 인증서 적용
 
 ---
 
@@ -329,22 +319,39 @@ npm run analyze
 
 ## 💡 추가 팁
 
-### 무료 플랜 제한사항
-- **Vercel**: 월 100GB 대역폭, 함수 실행 시간 10초
-- **Netlify**: 월 100GB 대역폭, 함수 실행 시간 10초
+### Vercel 무료 플랜 제한사항
+- 월 100GB 대역폭
+- 함수 실행 시간 10초
+- 동시 빌드 1개
 
 ### 비용 절약 방법
 1. **OpenAI API 사용량 모니터링**
 2. **캐싱 활용**으로 API 호출 줄이기
 3. **이미지 최적화**로 대역폭 절약
 
-### 모니터링
-- Vercel Analytics 활용
-- Google Analytics 연동
-- 오류 추적: Sentry 연동
+### 모니터링 및 분석
+- **Vercel Analytics**: 사용자 방문 통계
+- **Google Analytics**: 상세한 사용자 행동 분석
+- **Vercel Speed Insights**: 성능 모니터링
+- **오류 추적**: Sentry 연동
 
 ---
 
-**🎯 이 가이드를 따라하면 성북구 인물 추천 시스템을 성공적으로 배포할 수 있습니다!**
+## 🎉 배포 완료 체크리스트
 
-궁금한 점이 있으면 각 플랫폼의 공식 문서를 참고하세요.
+- [ ] GitHub 저장소 생성 및 코드 업로드
+- [ ] Vercel 계정 생성 및 프로젝트 연결
+- [ ] 환경 변수 설정 (OPENAI_API_KEY)
+- [ ] 배포 성공 확인
+- [ ] 🥚 다마고치 알 애니메이션 정상 작동 확인
+- [ ] 🎬 부화 연출 효과 테스트
+- [ ] AI 분석 기능 정상 작동 확인
+- [ ] 모바일 반응형 디자인 확인
+- [ ] 커스텀 도메인 연결 (선택사항)
+- [ ] HTTPS 인증서 적용 확인
+
+---
+
+**🎯 이 가이드를 따라하면 다마고치 컨셉이 적용된 성북구 독립운동가 추천 시스템을 성공적으로 배포할 수 있습니다!**
+
+궁금한 점이 있으면 [Vercel 공식 문서](https://vercel.com/docs)를 참고하세요.
