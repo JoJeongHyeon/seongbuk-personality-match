@@ -62,11 +62,43 @@ function ResultContent() {
     }
   }
 
-  const handleHatchingComplete = () => {
+  const handleHatchingComplete = (encouragement?: string) => {
     setShowHatching(false)
+    
+    // 격려 메시지가 있다면 AI 설명에 반영
+    if (encouragement && matchResult) {
+      generateExplanationWithEncouragement(matchResult, userTraits, encouragement)
+    }
+    
     setTimeout(() => {
       setShowResults(true)
     }, 500)
+  }
+
+  const generateExplanationWithEncouragement = async (result: MatchResult, userTraits: TraitScores, encouragement: string) => {
+    try {
+      const response = await fetch('/api/generate-explanation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          figureName: result.figure.name,
+          userTraits,
+          figureTraits: result.figure.personality_traits,
+          matchingTraits: result.matchingTraits,
+          figureDescription: result.figure.description,
+          themes: result.figure.themes,
+          encouragement // 격려 메시지 추가
+        })
+      })
+
+      const data = await response.json()
+      setExplanation(data.explanation)
+    } catch (error) {
+      console.error('Error generating explanation with encouragement:', error)
+      // 기본 설명이 이미 있으므로 에러 시 그대로 유지
+    }
   }
 
   // 부화 애니메이션 표시
