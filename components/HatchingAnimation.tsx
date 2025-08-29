@@ -36,45 +36,51 @@ export default function HatchingAnimation({ onHatchingComplete, figureName }: Ha
     return null // 부화 완료 후 숨김
   }
 
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="text-center max-w-md mx-auto p-6">
+    return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="text-center max-w-2xl w-full mx-auto">
         
         {/* 격려 메시지 입력 단계 */}
         {phase === 'input' && (
-          <div className="bg-white rounded-xl p-6 shadow-2xl">
-            <div className="mb-6">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-xl mx-auto">
+            <div className="mb-8">
               <EggAnimation 
                 stage={7} 
                 isHatching={false}
-                className="transform scale-125 mb-4"
+                className="transform scale-125 mb-6"
               />
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">
                 🥚 곧 부화할 알에게
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-base leading-relaxed">
+                독립운동가의 정신을 담은<br />
                 따뜻한 격려의 말을 건네주세요
               </p>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <textarea
                 value={encouragement}
                 onChange={(e) => setEncouragement(e.target.value)}
-                placeholder="예: 건강하게 태어나렴! 너의 모습이 궁금해..."
-                className="w-full h-24 p-3 border-2 border-gray-200 rounded-lg resize-none focus:border-primary-500 focus:outline-none text-sm"
-                maxLength={100}
+                placeholder="예: 우리나라를 위해 힘을 내주세요! 당신의 숭고한 뜻을 이어가겠습니다..."
+                className="w-full h-32 p-4 border-2 border-gray-200 rounded-xl resize-none focus:border-primary-500 focus:outline-none text-base leading-relaxed"
+                maxLength={120}
               />
-              <div className="text-xs text-gray-400 text-right">
-                {encouragement.length}/100
+              <div className="flex justify-between items-center text-sm">
+                <div className="text-gray-500">
+                  💡 독립운동가의 숭고한 정신에 어울리는 메시지를 작성해보세요
+                </div>
+                <div className="text-gray-400">
+                  {encouragement.length}/120
+                </div>
               </div>
               
               <button
                 onClick={handleEncouragementSubmit}
                 disabled={!encouragement.trim()}
-                className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
+                className={`w-full py-4 px-8 rounded-xl font-semibold text-lg transition-all duration-200 ${
                   encouragement.trim() 
-                    ? 'bg-primary-600 hover:bg-primary-700 text-white' 
+                    ? 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105' 
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
               >
