@@ -12,6 +12,7 @@ function ResultContent() {
   const [explanation, setExplanation] = useState<string>('')
   const [isLoading, setIsLoading] = useState(true)
   const [userTopTraits, setUserTopTraits] = useState<Array<{ name: string, score: number }>>([])
+  const [userTraits, setUserTraits] = useState<TraitScores | null>(null)
   const [showHatching, setShowHatching] = useState(true)
   const [showResults, setShowResults] = useState(false)
 
@@ -19,15 +20,16 @@ function ResultContent() {
     const scoresParam = searchParams.get('scores')
     if (scoresParam) {
       try {
-        const userTraits: TraitScores = JSON.parse(decodeURIComponent(scoresParam))
-        const result = findBestMatch(userTraits)
-        const topTraits = getTopTraits(userTraits)
+        const parsedUserTraits: TraitScores = JSON.parse(decodeURIComponent(scoresParam))
+        const result = findBestMatch(parsedUserTraits)
+        const topTraits = getTopTraits(parsedUserTraits)
         
+        setUserTraits(parsedUserTraits)
         setMatchResult(result)
         setUserTopTraits(topTraits)
         
         // GPT API 호출하여 설명 생성
-        generateExplanation(result, userTraits)
+        generateExplanation(result, parsedUserTraits)
       } catch (error) {
         console.error('Error parsing scores:', error)
         setIsLoading(false)
@@ -66,7 +68,7 @@ function ResultContent() {
     setShowHatching(false)
     
     // 격려 메시지가 있다면 AI 설명에 반영
-    if (encouragement && matchResult) {
+    if (encouragement && matchResult && userTraits) {
       generateExplanationWithEncouragement(matchResult, userTraits, encouragement)
     }
     
